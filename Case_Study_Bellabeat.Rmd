@@ -1,0 +1,43 @@
+---
+title: 'Case Study with R: Bellabeat'
+output: html_document
+params: 
+  date: Sys.Date()
+---
+
+## Company Details
+Bellabeat is one of the high-tech manufacturer of health-focused products for women. Even though it can be recognized as a successful small company, it possess the potential to become a larger player in the global smart device market. 
+
+Urška Sršen(cofounder and Chief Creative Officer of Bellabeat) believes that they can unlock more growth opportunities for the company by analyzing fitness and health related data collected through their smart devices. By analyzing the collected data on activity, sleep, stress, and reproductive health of Bellabeat app, Bellabeat can position themselves better through marketing strategy generated based on discovered insights. 
+
+## Questions for Analysis 
+1. What are some trends in smart device usage?
+2. How could these trends apply to Bellabeat customers?
+3. How could these trends help influence Bellabeat marketing strategy?
+
+## Target Delivery 
+To identify hidden insights within collected data set of Bellabeat app as the key essence of upcoming marketing strategy based on trends in smart device usage. 
+
+
+```{r setup, include=FALSE}
+library(readr)
+library(ggplot2)
+library(tidyverse)
+```
+
+## Data Preparation 
+
+### Step 1: Loading Packages
+For this case study, the assigned data sets are [FitBit Fitness Tracking Data](https://www.kaggle.com/datasets/arashnic/fitbit)
+
+To be more specific, the selected data sets are inclusive of:
+<li>test</li>
+
+```{r load data}
+### set working directory
+setwd("~/Code/RStudio/Fitabase-Data-4.12.16-5.12.16")
+
+### import dataset 
+dailyActivity_merged <- read_csv("dailyActivity_merged.csv")
+dailyCalories_merged <- read_csv("dailyCalories_merged.csv")
+```

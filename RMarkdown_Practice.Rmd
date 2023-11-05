@@ -1,0 +1,46 @@
+---
+title: "RMarkdown Practice - Coursera - Google"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(palmerpenguins)
+library(ggplot2)
+library(tidyverse)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### View Penguin Data
+
+```{r ggplot for penguin data}
+data("penguins")
+view(penguins)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Visualization of Penguin Data
+
+```{r ggplot for penguin data visualization}
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, 
+                           y = body_mass_g))
+```
+
+### Chart C
+
+```{r}
+ggplot(data = penguins) + 
+  geom_point(mapping = aes(x = flipper_length_mm, 
+                           y = body_mass_g)) + 
+  labs(title="Flipper Length and Body Mass of Penguins")
+```
+
+
